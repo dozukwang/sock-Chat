@@ -7,6 +7,8 @@ const path = require('path');
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+//public 이라는 라우트를 static을 제공하기 위한 사용하기 위함이라는 것을 선언
+app.use("/public", express.static(__dirname + "/public"))
 
 //router 묶기
 const indexRouter = require('./routes/index') //확장자 없이 작성
